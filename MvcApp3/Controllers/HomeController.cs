@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
@@ -43,5 +44,7 @@ namespace MvcApp3.Controllers
                 RedirectUri = "/Home/Index"
             }, AuthentificationClass.Cookie, AuthentificationClass.OpenIdConnected);
         }
+
+
     }
 }

@@ -37,26 +37,15 @@ namespace MvcApp2.Controllers
             }, AuthentificationClass.OpenIdConnected);
         }
 
-        //public async Task<IActionResult> Logout()
-        //{
-        //    return SignOut(new AuthenticationProperties
-        //    {
-        //        RedirectUri = "/Home/Index"
-        //    }, AuthentificationClass.Cookie, AuthentificationClass.OpenIdConnected);
-
-
-        //}
-        public void Logout(string sid)
+        public async Task<IActionResult> Logout()
         {
-            var cp = (ClaimsPrincipal)User;
-            var sidClaim = cp.FindFirst("sid");
-            if (sidClaim != null && sidClaim.Value == sid)
+            return SignOut(new AuthenticationProperties
             {
-                SignOut(new AuthenticationProperties
-                {
-                    RedirectUri = "/Home/Index"
-                }, AuthentificationClass.Cookie, AuthentificationClass.OpenIdConnected);
-            }
+                RedirectUri = "/Home/Index"
+            }, AuthentificationClass.Cookie, AuthentificationClass.OpenIdConnected);
+
+
         }
+
     }
 }

@@ -37,7 +37,9 @@ namespace IdentityServerOmg.InternalClasses
                         "customAPI.write"
                     },
                     RedirectUris =  { "https://127.0.0.1:53188/signin-oidc" },
+                    FrontChannelLogoutUri = "https://127.0.0.1:53188/signout-oidc",
                     PostLogoutRedirectUris =  { "https://127.0.0.1:53188/signout-callback-oidc" }
+                    
                 },
 
                 new Client
@@ -55,8 +57,11 @@ namespace IdentityServerOmg.InternalClasses
                     "customAPI.write"
                 },
                 RedirectUris =  { "https://localhost:51823/signin-oidc" },
+                FrontChannelLogoutUri = "https://localhost:51823/signout-oidc",
                 PostLogoutRedirectUris =  { "https://localhost:51823/signout-callback-oidc" }
-                 
+                
+
+
                 }
             };
         }
